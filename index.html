@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+</head>
+<body>
+	<div class="wrapper">		
+		<div class="pic">
+			<img src="images/bgr.jpg">
+		</div>
+		<div class="content">
+			<div class="logo">
+				<img src="images/logo.png">
+			</div>
+			<form>				
+				<table >
+					<tr>
+						<td colspan="2"><b>PERSONAL INFORMATION</b></td>
+					</tr>
+					<tr>
+						<td>FIRST NAME</td>
+						<td><input style="width: 97%" type="text" name="firstname" id="firstname">
+						<div id='nullfirstname'></div></td>
+					</tr>
+					<tr>
+						<td>LAST NAME</td>
+						<td><input style="width: 97%" type="text" name="lastname" id="lastname">
+						<div id='nulllastname'></div></td>
+					</tr>
+					<tr>
+						<td>EMAIL NAME</td>
+						<td><input style="width: 97%" type="text" name="email" id="email">
+						<div id='nullemail'></div></td>
+					</tr>
+					<tr>
+						<td>GENDER</td>
+						<td>
+							<label>
+								<input type="radio" checked="checked" name="gioitinh" id="nam"> MALE	
+							</label>
+							<label>
+								<input type="radio" name="gioitinh" id="nu"> FEMALE
+							</label>							
+						</td>
+					</tr>
+					<tr>
+						<td>DATE OF BIRTH</td>
+						<td>
+							<select name="ngay" id="ngay">
+								<option selected="selected"></option>
+								<option value="01">01</option>
+							</select>
+							<select name="thang" id="thang">
+								<option selected="selected"></option>
+								<option value="1" >01</option>
+							</select>
+							<select name="nam" id="namsinh">
+								<option selected="selected"></option>
+								<option value="1990">1990</option>								
+							</select>
+							<div id='nullbirthday'></div>
+						</td>
+					</tr>
+					<tr>
+						<td>TRAINING FOR</td>
+						<td>
+							<select id="training_for" style="width: 100%">
+								<option value="selectone">Select One</option>
+							</select>
+							<div id="nulltraining_for"></div>
+						</td>
+					</tr>
+					<tr>
+						<td>TRAINING FORCUS</td>
+						<td>
+							<select id="training_forcus" style="width: 100%">
+								<option value="selectone">Select One</option>
+							</select>
+							<div id="nulltraining_forcus"></div>
+						</td>						
+					</tr>
+					<tr>
+						<td>LOCATION</td>
+						<td>
+							<select id="location" style="width: 100%">
+								<option value="selectone">Select One</option>
+							</select>
+							<div id="nulllocation"></div>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2"><input id="cbk" type="checkbox" name="">I have read and accept the Terns of Use</td>						
+					</tr>
+					<tr>						
+						<td colspan="2"><button type="submit" disabled="" id="btn">SUBSCRIBE NOW</button></td>	
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
+<script>
+	$(document).ready(function(){
+		$("#firstname").blur(function(){
+			if($(this).val().length == 0){
+				$("#nullfirstname").html("Không được để trống trường này !");
+				$("#nullfirstname").css("color","black");
+			}else{
+				$("#nullfirstname").html("");
+			}
+		});
+		$("#lastname").blur(function(){
+			if($(this).val().length == 0){
+				$("#nulllastname").html("Không được để trống trường này !");
+				$("#nulllastname").css("color","black");
+			}else{
+				$("#nulllastname").html("");
+			}
+		});
+		$("#email").blur(function(){
+			if($(this).val().length == 0){
+				$("#nullemail").html("Không được để trống trường này !");
+				$("#nullemail").css("color","black");
+			}else{
+				$("#nullemail").html("");
+			}
+		});
+		$("#ngay").blur(function(){
+			if($(this).val().length == 0){
+				$("#nullbirthday").html("Không được để trống trường này !");
+				$("#nullbirthday").css("color","black");
+			}else{
+				$("#nullbirthday").html("");
+			}
+		});
+		$("#thang").blur(function(){
+			if($(this).val().length == 0){
+				$("#nullbirthday").html("Không được để trống trường này !");
+				$("#nullbirthday").css("color","black");
+			}else{
+				$("#nullbirthday").html("");
+			}
+		});
+		$("#namsinh").blur(function(){
+			if($(this).val().length == 0){
+				$("#nullbirthday").html("Không được để trống trường này !");
+				$("#nullbirthday").css("color","black");
+			}else{
+				$("#nullbirthday").html("");
+			}
+		});
+		$("#training_for").blur(function(){
+			if($(this).val() == "selectone"){
+				$("#nulltraining_for").html("Không được để trống trường này !");
+				$("#nulltraining_for").css("color","black");
+			}else{
+				$("#nulltraining_for").html("");
+			}
+		});
+		$("#training_forcus").blur(function(){
+			if($(this).val() == "selectone"){
+				$("#nulltraining_forcus").html("Không được để trống trường này !");
+				$("#nulltraining_forcus").css("color","black");
+			}else{
+				$("#nulltraining_forcus").html("");
+			}
+		});
+		$("#location").blur(function(){
+			if($(this).val() == "selectone"){
+				$("#nulllocation").html("Không được để trống trường này !");
+				$("#nulllocation").css("color","black");
+			}else{
+				$("#nulllocation").html("");
+			}
+		});
+		$("#cbk").change(function(){
+            if($(this).is(":checked")){
+                $("#btn").removeAttr('disabled');
+            }else{
+                $("#btn").attr('disabled','');
+            }
+        });
+	});
+</script>
